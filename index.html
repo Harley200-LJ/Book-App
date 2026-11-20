@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-50 p-6">
+    <h1 class="text-2xl font-bold mb-4">My Books</h1>
+
+    <label for="genre-filter" class="mr-2">Genre:</label>
+    <select id="genre-filter" class="mb-4 rounded border p-2">
+        <option value="All">All</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Biography">Biography</option>
+        <option value="Classic">Classic</option>
+        <option value="Crime">Crime</option>
+        <option value="Dark Fantasy">Dark Fantasy</option>
+        <option value="Dystopian">Dystopian</option>
+        <option value="Espionage">Espionage</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Folklore">Folklore</option>
+        <option value="Greek Mythology">Greek Mythology</option>
+        <option value="Historical">Historical</option>
+        <option value="Horror">Horror</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Non-Fiction">Non-Fiction</option>
+        <option value="Romance">Romance</option>
+        <option value="Romantasy">Romantasy</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Self-Help">Self-Help</option>
+        <option value="Teenage Drama">Teenage Drama</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Urban Fantasy">Urban Fantasy</option>
+        <option value="Vampires/Werewolves">Vampires/Werewolves</option>
+
+    </select>
+
+    <ul id="book-list" class="list-disc pl-6"></ul>
+
+    <script src="js/books.js"></script>
+</body>
+
+</html>

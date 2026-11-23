@@ -3038,4 +3038,15 @@ function filterByGenre(genre) {
     return books.filter((book) => book.genre === genre);
 }
 
-console.log(filterByGenre("Fantasy"));
+function showTitles(list) {
+
+}
+
+const genreFilter = document.getElementById("genreFilter");
+genreFilter.addEventListener("change", (event) => {
+    const selectedGenre = event.target.value;
+    const filteredBooks = filterByGenre(selectedGenre);
+    showTitles(filteredBooks);
+});
+
+showTitles(books);

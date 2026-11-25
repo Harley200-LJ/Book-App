@@ -3138,11 +3138,24 @@ const books = [
 
 // One book in, one card's HTML out
 function bookCard(book) {
+    // Only show stars for books that have a rating
+    const hasRating = typeof book.rating === "number";
+    const stars = hasRating ? "★".repeat(book.rating) + "☆".repeat(5 - book.rating) : "";
+    const starsLine = hasRating
+        ? `<p class="mt-2 text-amber-500" aria-label="${book.rating} out of 5 stars">${stars}</p>`
+        : "";
+
+    const readBadge = book.read ? "Read" : "Not read yet";
+    const shelfLabel = book.owned ? "On my shelf" : "To buy";
+    const shelfColour = book.owned ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800";
     return `
         <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <h3 class="text-lg font-semibold text-slate-900">${book.title}</h3>
             <p class="text-sm text-slate-600">${book.author} · ${book.year}</p>
+            ${starsLine}
             <span class="mt-3 inline-block rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-800">${book.genre}</span>
+            <span class="mt-3 inline-block rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-800">${readBadge}</span>
+            <span class="mt-3 inline-block rounded-full ${shelfColour} px-3 py-1 text-xs font-medium">${shelfLabel}</span>
         </li>
     `;
 }

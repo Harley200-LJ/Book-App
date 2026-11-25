@@ -2852,7 +2852,7 @@ const books = [
     {
         title: "The Host",
         author: "Stephenie Meyer",
-        genre: "",
+        genre: "Science Fiction",
         year: 2008,
         pages: null,
         read: true,
@@ -3031,22 +3031,55 @@ const books = [
     }
 ];
 
+// One book in, one card's HTML out
+function bookCard(book) {
+    return `
+        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900">${book.title}</h3>
+            <p class="text-sm text-slate-600">${book.author} · ${book.year}</p>
+            <span class="mt-3 inline-block rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-800">${book.genre}</span>
+        </li>
+    `;
+}
+
+// A list of books in, cards on the page
+function renderBooks(list) {
+    const bookList = document.getElementById("book-list");
+
+    if (list.length === 0) {
+        bookList.innerHTML = "<li>No books found for the selected genre.</li>";
+        return;
+    }
+
+    bookList.innerHTML = list.map(bookCard).join("");
+}
+
+// Returns every book, or only the books in one genre
 function filterByGenre(genre) {
     if (genre === "All") {
         return books;
-    } 
+    }
     return books.filter((book) => book.genre === genre);
 }
 
-function showTitles(list) {
+const genreFilter = document.getElementById("genre-filter");
 
+// Adds one dropdown option per genre found in the books array
+function populateGenreFilter() {
+    const genres = [...new Set(books.map((book) => book.genre))].sort();
+
+    genres.forEach((genre) => {
+        const option = document.createElement("option");
+        option.value = genre;
+        option.textContent = genre;
+        genreFilter.appendChild(option);
+    });
 }
 
-const genreFilter = document.getElementById("genreFilter");
 genreFilter.addEventListener("change", (event) => {
-    const selectedGenre = event.target.value;
-    const filteredBooks = filterByGenre(selectedGenre);
-    showTitles(filteredBooks);
+    renderBooks(filterByGenre(event.target.value));
 });
 
-showTitles(books);
+// Set up the dropdown and show all books when the page first loads
+populateGenreFilter();
+renderBooks(books);

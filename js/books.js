@@ -2835,6 +2835,81 @@ const books = [
         }
     },
     {
+        title: "Twilight",
+        author: "Stephenie Meyer",
+        genre: "Vampires/Werewolves",
+        year: 2005,
+        pages: 434,
+        read: true,
+        isbn: "9781904233657",
+        owned: true,
+        series: "The Twilight Saga",
+        seriesNumber: 1,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+    {
+        title: "New Moon",
+        author: "Stephenie Meyer",
+        genre: "Vampires/Werewolves",
+        year: 2006,
+        pages: 594,
+        read: true,
+        isbn: "9781904233886",
+        owned: true,
+        series: "The Twilight Saga",
+        seriesNumber: 2,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+        {
+        title: "Eclipse",
+        author: "Stephenie Meyer",
+        genre: "Vampires/Werewolves",
+        year: 2007,
+        pages: 628,
+        read: true,
+        isbn: "9781904233916",
+        owned: true,
+        series: "The Twilight Saga",
+        seriesNumber: 3,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+        {
+        title: "Breaking Dawn",
+        author: "Stephenie Meyer",
+        genre: "Vampires/Werewolves",
+        year: 2008,
+        pages: 754,
+        read: true,
+        isbn: "9781905654284",
+        owned: true,
+        series: "The Twilight Saga",
+        seriesNumber: 4,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+        {
+        title: "The Short Second Life of Bree Tanner",
+        author: "Stephenie Meyer",
+        genre: "Vampires/Werewolves",
+        year: 2010,
+        pages: 178,
+        read: true,
+        isbn: "9781907410369",
+        owned: true,
+        series: "The Twilight Saga",
+        seriesNumber: 3.5,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+    {
         title: "Midnight Sun",
         author: "Stephenie Meyer",
         genre: "Vampires/Werewolves",
@@ -2844,7 +2919,7 @@ const books = [
         isbn: "9780349003641",
         owned: true,
         series: "The Twilight Saga",
-        seriesNumber: 6,
+        seriesNumber: null,
         describe() {
             return `${this.title} by ${this.author} (${this.year})`;
         }
@@ -3022,6 +3097,36 @@ const books = [
         pages: null,
         read: false,
         isbn: "9780241999776",
+        owned: true,
+        series: "",
+        seriesNumber: null,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+    {
+        title: "The Zorg",
+        author: "Siddharth Kara",
+        genre: "Historical Non-Fiction",
+        year: 2025,
+        pages: 224,
+        read: false,
+        isbn: "9781804997925",
+        owned: true,
+        series: "",
+        seriesNumber: null,
+        describe() {
+            return `${this.title} by ${this.author} (${this.year})`;
+        }
+    },
+    {
+        title: "Ravenous",
+        author: "Kresley Cole",
+        genre: "Dark Fantasy",
+        year: 2026,
+        pages: null,
+        read: false,
+        isbn: "9781035926619",
         owned: true,
         series: "",
         seriesNumber: null,

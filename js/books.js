@@ -2017,7 +2017,7 @@ const books = [
         pages: null,
         read: false,
         isbn: "",
-        owned: true,
+        owned: false,
         series: "Kindred's Curse Saga",
         seriesNumber: 4,
         describe() {
